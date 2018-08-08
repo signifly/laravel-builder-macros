@@ -1,0 +1,47 @@
+{
+    "name": "signifly/laravel-builder-macros",
+    "description": "A set of useful Laravel builder macros.",
+    "homepage": "https://github.com/signifly/laravel-builder-macros",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Morten Poul Jensen",
+            "email": "mpj@signifly.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/database": "^5.6",
+        "illuminate/support": "^5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "orchestra/testbench": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Signifly\\BuilderMacros\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Signifly\\BuilderMacros\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Signifly\\BuilderMacros\\BuilderMacroServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    }
+}
