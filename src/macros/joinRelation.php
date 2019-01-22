@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Builder;
 
-Builder::macro('joinRelation', function ($relation, $operator = '=') {
-    $relation = $this->getRelation($relation);
+Builder::macro('joinRelation', function (string $relationName, $operator = '=') {
+    $relation = $this->getRelation($relationName);
 
     return $this->join(
         $relation->getRelated()->getTable(),
