@@ -12,6 +12,87 @@ $ composer require signifly/laravel-builder-macros
 
 The package will automatically register itself.
 
+## Macros
+
+- [`addSubSelect`](#addSubSelect)
+- [`defaultSelectAll`](#defaultSelectAll)
+- [`joinRelation`](#joinRelation)
+- [`leftJoinRelation`](#leftJoinRelation)
+- [`map`](#map)
+- [`whereLike`](#whereLike)
+
+### `addSubSelect`
+
+Add a select sub query.
+
+```php
+// Params: $column, $query
+$query->addSubSelect('primary_address_id', 
+    Address::select('id')
+        ->where('user_id', $user->id)
+        ->primary()
+);
+
+// It adds primary_address_id to the result set
+```
+
+### `defaultSelectAll`
+
+It selects all columns from the query. Useful for queries with joins and additional selects.
+
+```php
+$query->defaultSelectAll()
+    ->join('contacts', 'users.id', '=', 'contacts.user_id')
+    ->addSelect('contacts.name as contact_name');
+```
+
+### `joinRelation`
+
+A query way to join relations.
+
+```php
+// Params: $relationName, $operator
+$query->joinRelation('contact');
+```
+
+### `leftJoinRelation`
+
+A query to left join relations.
+
+```php
+// Params: $relationName, $operator
+$query->leftJoinRelation('contact');
+```
+
+### `map`
+
+A direct method to retrieve the results and map it.
+
+```php
+$userIds = $query->where('user_id', 10)->map(function ($user) {
+    return $user->id;
+});
+
+// Returns a collection
+```
+
+### `whereLike`
+
+Search in your models with the `LIKE` operator.
+
+```php
+$query->whereLike('title', 'john')->get();
+
+// Returns all results where title  includes `john`
+```
+
+You can also supply an array of columns to search in:
+```php
+$query->whereLike(['title', 'contact.name'], 'john')->get();
+
+// Returns all results where title or contact.name includes `john`
+```
+
 ## Testing
 ```bash
 $ composer test
