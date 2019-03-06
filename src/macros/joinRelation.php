@@ -7,7 +7,7 @@ Builder::macro('joinRelation', function (string $relationName, $operator = '=') 
 
     return $this->join(
         $relation->getRelated()->getTable(),
-        $relation->getQualifiedForeignKey(),
+        $relation->getQualifiedForeignKeyName(),
         $operator,
         $relation->getQualifiedOwnerKeyName()
     );
