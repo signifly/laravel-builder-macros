@@ -1,12 +1,14 @@
 <?php
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 
 Builder::macro('whereLike', function ($columns, string $value) {
     $this->where(function (Builder $query) use ($columns, $value) {
-        foreach (array_wrap($columns) as $column) {
+        foreach (Arr::wrap($columns) as $column) {
             $query->when(
-                str_contains($column, '.'),
+                Str::contains($column, '.'),
 
                 // Relational searches
                 function (Builder $query) use ($column, $value) {
