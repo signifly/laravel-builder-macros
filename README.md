@@ -1,7 +1,7 @@
 # A set of useful Laravel builder macros
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/signifly/laravel-builder-macros.svg?style=flat-square)](https://packagist.org/packages/signifly/laravel-builder-macros)
-[![Build Status](https://img.shields.io/travis/signifly/laravel-builder-macros/master.svg?style=flat-square)](https://travis-ci.org/signifly/laravel-builder-macros)
+![Tests](https://github.com/signifly/laravel-janitor/workflows/Tests/badge.svg)
 [![StyleCI](https://styleci.io/repos/144017418/shield?branch=master)](https://styleci.io/repos/144017418)
 [![Quality Score](https://img.shields.io/scrutinizer/g/signifly/laravel-builder-macros.svg?style=flat-square)](https://scrutinizer-ci.com/g/signifly/laravel-builder-macros)
 [![Total Downloads](https://img.shields.io/packagist/dt/signifly/laravel-builder-macros.svg?style=flat-square)](https://packagist.org/packages/signifly/laravel-builder-macros)
