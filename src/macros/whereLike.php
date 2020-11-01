@@ -12,7 +12,9 @@ Builder::macro('whereLike', function ($columns, string $value) {
 
                 // Relational searches
                 function (Builder $query) use ($column, $value) {
-                    [$relationName, $relationColumn] = explode('.', $column);
+                    $parts = explode('.', $column);
+                    $relationColumn = array_pop($parts);
+                    $relationName = join('.', $parts);
 
                     return $query->orWhereHas(
                         $relationName,
