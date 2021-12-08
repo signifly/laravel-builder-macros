@@ -1,7 +1,7 @@
 # A set of useful Laravel builder macros
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/signifly/laravel-builder-macros.svg?style=flat-square)](https://packagist.org/packages/signifly/laravel-builder-macros)
-![Tests](https://github.com/signifly/laravel-janitor/workflows/Tests/badge.svg)
+![Tests](https://github.com/signifly/laravel-builder-macros/workflows/Tests/badge.svg)
 [![StyleCI](https://styleci.io/repos/144017418/shield?branch=master)](https://styleci.io/repos/144017418)
 [![Quality Score](https://img.shields.io/scrutinizer/g/signifly/laravel-builder-macros.svg?style=flat-square)](https://scrutinizer-ci.com/g/signifly/laravel-builder-macros)
 [![Total Downloads](https://img.shields.io/packagist/dt/signifly/laravel-builder-macros.svg?style=flat-square)](https://packagist.org/packages/signifly/laravel-builder-macros)
@@ -13,7 +13,7 @@ The `signifly/laravel-builder-macros` package allows you to easily add a set of 
 You can install the package via composer:
 
 ```bash
-$ composer require signifly/laravel-builder-macros
+composer require signifly/laravel-builder-macros
 ```
 
 The package will automatically register itself.
@@ -101,7 +101,7 @@ $query->whereLike(['title', 'contact.name'], 'john')->get();
 
 ## Testing
 ```bash
-$ composer test
+composer test
 ```
 
 ## Security
