@@ -9,6 +9,6 @@ Builder::macro('leftJoinRelation', function (string $relationName, $operator = '
         $relation->getRelated()->getTable(),
         $relation->getQualifiedForeignKeyName(),
         $operator,
-        $relation->getQualifiedOwnerKeyName()
+        $relation->getQualifiedParentKeyName()
     );
 });
